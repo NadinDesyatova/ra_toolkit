@@ -14,6 +14,14 @@ export type MovieDetailsType = {
   favorite?: boolean
 }
 
+export type MovieResponseByNameType = {
+  imdbID: string,
+  Poster: string, 
+  Title: string,
+  Year: string,
+  Type: string
+}
+
 export type MovieMainContentType = {
   imdbID: string,
   Poster: string, 

@@ -4,7 +4,12 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { MovieDetailsType, MovieMainContentType, MoviesStateType } from "../../common/components-types";
+import { 
+  MovieResponseByNameType,
+  MovieDetailsType, 
+  MovieMainContentType, 
+  MoviesStateType 
+} from "../../common/components-types";
 
 
 const initialState: MoviesStateType = {
@@ -58,7 +63,7 @@ export const moviesSlice = createSliceWithThunk({
           const foundMovies = await response.json();
 
           return foundMovies.Response === "True"
-            ? foundMovies.Search.map((movie: any) => ({
+            ? foundMovies.Search.map((movie: MovieResponseByNameType) => ({
               imdbID: movie.imdbID,
               Poster: movie.Poster, 
               Title: movie.Title,
